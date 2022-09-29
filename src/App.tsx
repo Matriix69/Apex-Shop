@@ -3,11 +3,13 @@ import ProductPage from "./components/productPage/ProductPage";
 import CartPage from "./components/cartPage/CartPage";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import CategoryPages from "./components/categoryPages/CategoryPages";
+import ErrorPage from "./components/404page/404";
 
 const router = createBrowserRouter([
     {
         path: "/",
         element: <Header />,
+        errorElement: <ErrorPage />,
         children: [
             {
                 path: "/",
