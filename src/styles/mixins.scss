@@ -1,0 +1,23 @@
+@mixin center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin buttonLayout {
+    appearance: none;
+    border: none;
+    outline: none;
+    background: inherit;
+    padding: 0;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+}
+
+@mixin flex1($direction) {
+    display: flex;
+    align-items: center;
+    @if $direction != row {
+        flex-direction: column;
+    }
+}

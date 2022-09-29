@@ -1,0 +1,248 @@
+@use "../../styles/mixins.scss";
+
+.c_modal {
+    min-width: 325px;
+    max-width: 325px;
+    padding: 32px 16px;
+    position: absolute;
+    z-index: 20;
+    background-color: white;
+    right: 0;
+    text-align: left;
+    max-height: calc(100vh - 3rem);
+    overflow-y: auto;
+    top: 2rem;
+    @media (max-width: 350px) {
+        min-width: 100vw;
+        max-width: 100vw;
+        margin-right: -15px;
+    }
+    h2 {
+        font-size: 16px;
+        font-weight: 400;
+
+        span {
+            font-weight: 700;
+        }
+    }
+}
+.c_modal_overlay {
+    position: fixed;
+    top: 80px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(57, 55, 72, 0.22);
+    z-index: 9;
+
+    @media screen and (max-width: 990px) {
+        top: 60px;
+    }
+}
+.m {
+    display: grid;
+    grid-template-columns: 1fr minmax(0, 149px);
+    gap: 8px;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 32px;
+
+    &_image {
+        display: grid;
+        grid-template-columns: 24px minmax(0, 121px);
+        gap: 8px;
+        min-height: 100%;
+        height: inherit;
+
+        &_count {
+            @include mixins.flex1(column);
+            justify-content: space-between;
+            min-height: 100%;
+            width: 100%;
+            button {
+                @include mixins.buttonLayout;
+                svg {
+                    height: 24px;
+                    width: 24px;
+                }
+            }
+        }
+
+        &_preview {
+            max-width: 200px;
+            min-height: 100%;
+            overflow: hidden;
+            position: relative;
+
+            img {
+                max-width: 200px;
+                width: 100%;
+                min-height: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+
+        &_slide {
+            position: absolute;
+            bottom: 24px;
+            right: 22px;
+            @include mixins.flex1(row);
+            gap: 8px;
+            button {
+                @include mixins.buttonLayout;
+                @include mixins.flex1(row);
+                justify-content: center;
+
+                background: rgba(0, 0, 0, 0.73);
+                width: 24px;
+                height: 24px;
+                color: white;
+            }
+        }
+    }
+
+    &_details {
+        max-width: 290px;
+
+        &_title,
+        &_category {
+            font-size: 16px;
+            line-height: 25px;
+            font-weight: 300;
+        }
+        &_title {
+            margin: 0;
+            color: var(--black);
+        }
+
+        &_category {
+            color: var(--gray);
+        }
+
+        &_sizes {
+            margin-top: 8px;
+
+            &_list {
+                @include mixins.flex1(row);
+                gap: 8px;
+                margin-top: 8px;
+                flex-wrap: wrap;
+
+                button {
+                    height: 24px;
+                    width: 24px;
+                    font-size: 14px;
+                    border: 1px solid var(--black);
+                    background: transparent;
+                }
+            }
+        }
+
+        &_colors {
+            margin-top: 8px;
+
+            &_list {
+                @include mixins.flex1(row);
+                gap: 8px;
+                margin-top: 8px;
+
+                button {
+                    height: 16px;
+                    width: 16px;
+                    border: none;
+                    padding: 1px;
+
+                    span {
+                        display: block;
+                        width: 100%;
+                        height: 100%;
+                    }
+                }
+            }
+        }
+
+        &_price {
+            margin-top: 4px;
+            margin-bottom: 8px;
+            line-height: 160%;
+        }
+    }
+}
+
+.m_price {
+    @include mixins.flex1(row);
+    justify-content: space-between;
+    font-weight: 500;
+    font-size: 16px;
+    margin-top: 40px;
+    line-height: 18px;
+
+    div:last-child {
+        font-weight: 700;
+    }
+}
+.m_actions {
+    padding-top: 32px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+
+    &_bag,
+    &_check {
+        height: 43px;
+        @include mixins.buttonLayout;
+        font-size: 14px;
+        font-weight: 600;
+        text-transform: uppercase;
+    }
+    &_bag {
+        border: 1px solid var(--black);
+        @include mixins.flex1(row);
+        justify-content: center;
+    }
+
+    &_check {
+        background: var(--accent);
+        color: white;
+    }
+}
+.pricing {
+    padding-top: 32px;
+    border-top: 1px solid #e5e5e5;
+    &_list {
+        display: grid;
+        grid-template-columns: 110px 1fr;
+        font-size: 24px;
+        line-height: 31px;
+
+        span {
+            font-weight: 600;
+        }
+    }
+
+    &_action {
+        @include mixins.buttonLayout;
+        max-width: 279px;
+        width: 100%;
+        height: 43px;
+        margin-top: 20px;
+        background: var(--accent);
+        color: white;
+        font-weight: 600;
+        font-size: 14px;
+        text-align: center;
+    }
+}
+
+.cart_heading {
+    font-weight: 700;
+    font-size: 32px;
+    padding-top: 80px;
+    padding-bottom: 55px;
+
+    @media screen and (max-width: 990px) {
+        padding-top: 40px;
+        padding-bottom: 25px;
+    }
+}

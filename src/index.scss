@@ -1,0 +1,43 @@
+:root {
+    --accent: #5ece7b;
+    --gray: #1d1f22;
+    --black: #1d1f22;
+    --roboto: "Roboto Condensed", sans-serif;
+}
+*,
+:after,
+:before {
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent !important;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    box-sizing: border-box;
+    color: var(--black);
+    font-family: "Raleway", sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell",
+        "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+    font-family: "Raleway", sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell",
+        "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    color: var(--black);
+    margin-bottom: 100px;
+}
+
+.category_name {
+    font-size: 42px;
+    padding-top: 80px;
+    padding-bottom: 87px;
+    @media screen and (max-width: 990px) {
+        padding-top: 40px;
+        padding-bottom: 25px;
+    }
+}

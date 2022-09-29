@@ -1,0 +1,138 @@
+@use "../../styles/mixins.scss";
+
+.header {
+    @include mixins.flex1(row);
+    justify-content: space-between;
+    height: 80px;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    background-color: white;
+    margin: 0 -15px;
+    padding: 0 15px;
+    // box-shadow: 0 0 0 100vmax white;
+    // clip-path: inset(0 -100vmax);
+
+    @media screen and (max-width: 990px) {
+        height: 60px;
+    }
+
+    &_nav {
+        @include mixins.flex1(row);
+        gap: 32px;
+        height: inherit;
+
+        a {
+            font-size: 16px;
+            text-transform: uppercase;
+            @include mixins.flex1(row);
+            height: inherit;
+        }
+
+        @media screen and (max-width: 700px) {
+            display: none;
+            gap: 10px;
+            position: absolute;
+            flex-direction: column;
+            background: white;
+            top: 60px;
+            z-index: 99;
+            width: 100%;
+            min-height: 180px;
+            left: 0;
+            align-items: flex-start;
+            padding: 0 15px;
+        }
+    }
+
+    &_actions {
+        @include mixins.flex1(row);
+        justify-content: flex-end;
+        // gap: 22px;
+        height: inherit;
+        min-width: 200px;
+
+        @media screen and (max-width: 700px) {
+            min-width: 100px;
+        }
+
+        &_currency {
+            position: relative;
+
+            &_btn {
+                @include mixins.flex1(row);
+                @include mixins.buttonLayout;
+                span {
+                    font-size: 18px;
+                    margin-right: 10px;
+                }
+            }
+        }
+
+        &_cart {
+            padding: 0 22px;
+            position: relative;
+
+            &_btn {
+                @include mixins.buttonLayout;
+                svg {
+                    width: 20px;
+                    height: 20px;
+                }
+            }
+            &_count {
+                display: block;
+                position: absolute;
+                width: 20px;
+                height: 20px;
+                font-weight: 700;
+                font-size: 14px;
+                line-height: 16px;
+                border-radius: 50%;
+                background: var(--black);
+                color: white;
+                @include mixins.flex1(row);
+                justify-content: center;
+                top: -0.5rem;
+                right: 0.5rem;
+            }
+        }
+    }
+}
+
+.active_tab {
+    color: var(--accent);
+    border-bottom: 2px solid var(--accent);
+    font-weight: 600px;
+}
+
+.burger {
+    display: none;
+    @include mixins.buttonLayout;
+    height: inherit;
+    min-width: 100px;
+
+    @media screen and (max-width: 700px) {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+    &_toggle {
+        &::before,
+        &::after {
+            content: "";
+            display: block;
+            height: 1px;
+            width: 22px;
+            background-color: black;
+            transition: transform 0.15s ease;
+        }
+        &::after {
+            transform: translateY(4px) rotate(0deg);
+        }
+        &::before {
+            transform: translateY(-4px) rotate(0deg);
+        }
+    }
+}

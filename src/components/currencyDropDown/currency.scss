@@ -1,0 +1,21 @@
+@use "../../styles/mixins.scss";
+
+.currency {
+    width: 114px;
+    background: white;
+    box-shadow: 0px 4px 35px rgba(168, 172, 176, 0.19);
+    position: absolute;
+    right: -4rem;
+    top: 1.5rem;
+    @include mixins.flex1(column);
+
+    button {
+        @include mixins.buttonLayout;
+        height: 45px;
+        width: 100%;
+
+        &:hover {
+            background: #eeeeee;
+        }
+    }
+}

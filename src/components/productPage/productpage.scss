@@ -1,0 +1,178 @@
+@use "../../styles/mixins.scss";
+.p {
+    display: grid;
+    grid-template-columns: 1fr 392px;
+    gap: 100px;
+    margin-top: 72px;
+    @media screen and (max-width: 990px) {
+        grid-template-columns: 1fr;
+    }
+
+    &_images {
+        display: grid;
+        grid-template-columns: 80px 1fr;
+        gap: 24px;
+
+        @media screen and (max-width: 990px) {
+            grid-template-columns: 1fr;
+            &_preview {
+                order: 2;
+            }
+        }
+
+        &_preview {
+            @include mixins.flex1(column);
+            gap: 32px;
+
+            @media screen and (max-width: 990px) {
+                flex-direction: row;
+                display: grid;
+                grid-template-columns: repeat(3, minmax(0, 80px));
+                gap: 16px;
+            }
+
+            button {
+                @include mixins.buttonLayout;
+
+                img {
+                    width: 100%;
+                    height: auto;
+                }
+            }
+        }
+
+        &_main {
+            max-width: 100%;
+            aspect-ratio: 59/55;
+            overflow: hidden;
+            // position: relative;
+            img {
+                min-width: 100%;
+                max-height: 100%;
+                width: 100%;
+                height: auto;
+                // object-fit: cover;
+                // position: absolute;
+            }
+        }
+    }
+
+    &_details {
+        max-width: 290px;
+        margin: 0 auto;
+        @media screen and (min-width: 990px) {
+            margin-right: 100px;
+            max-width: 100%;
+        }
+
+        &_title,
+        &_category {
+            font-size: 30px;
+            line-height: 34px;
+        }
+        &_title {
+            font-weight: 600;
+            margin: 0;
+            color: var(--black);
+        }
+
+        &_category {
+            color: var(--gray);
+            margin-top: 16px;
+        }
+
+        &_sizes {
+            margin-top: 30px;
+
+            // &_title {
+
+            // }
+
+            &_list {
+                @include mixins.flex1(row);
+                gap: 12px;
+                margin-top: 8px;
+                flex-wrap: wrap;
+
+                button {
+                    width: 63px;
+                    height: 45px;
+                    border: 1px solid var(--black);
+                    background: transparent;
+                }
+
+                &_selected {
+                    background: var(--black) !important;
+                    color: white;
+                }
+            }
+        }
+
+        &_colors {
+            margin-top: 24px;
+
+            // &_title {
+
+            // }
+
+            &_list {
+                @include mixins.flex1(row);
+                gap: 12px;
+                margin-top: 8px;
+
+                button {
+                    border: none;
+                    width: 32px;
+                    height: 32px;
+                    padding: 1px;
+
+                    span {
+                        display: block;
+                        width: 100%;
+                        height: 100%;
+                    }
+                }
+
+                &_selected {
+                    border: 1px solid #5ece7b !important;
+                }
+            }
+        }
+
+        &_price {
+            margin-top: 36px;
+
+            div:last-child {
+                font-weight: 700;
+                font-size: 24px;
+                line-height: 39px;
+                margin-top: 10px;
+            }
+        }
+
+        &_action {
+            @include mixins.buttonLayout;
+            height: 52px;
+            width: 100%;
+            margin-top: 20px;
+            background: var(--accent);
+            color: white;
+            font-weight: 600;
+            font-size: 16px;
+        }
+
+        &_description {
+            font-size: 16px;
+            line-height: 159.96%;
+            margin-top: 40px;
+        }
+    }
+}
+
+.condensed_title {
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 18px;
+    color: var(--black);
+    font-family: "Roboto Condensed", sans-serif;
+}
