@@ -61,7 +61,7 @@ const Header = () => {
                             <span>{currentCurrency.symbol}</span>
                             <Arrow />
                         </button>
-                        {switchCurrency && <CurrencyDropDown />}
+                        {switchCurrency && <CurrencyDropDown setSwitchCurrency={setSwitchCurrency} />}
                     </div>
 
                     <div className="header_actions_cart">

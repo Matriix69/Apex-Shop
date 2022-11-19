@@ -10,6 +10,8 @@ export interface products {
     }[];
     image: string;
     imagePreviews: string[];
+    category?: string;
+    discountedPrice?: number;
 }
 
 export interface Routes {

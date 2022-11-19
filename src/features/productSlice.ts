@@ -1,7 +1,7 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import type { RootState } from "../app/store";
 import { Cart, cartUpdateColor, cartUpdateSize, Currencies, products } from "../utiles/types";
-import { mockData } from "../utiles/utiles";
+import { getCartFromLocalStorage, mockData, setCarttoLocalStorage } from "../utiles/utiles";
 
 // Define a type for the slice state
 interface Shop {
@@ -17,7 +17,7 @@ const initialState: Shop = {
         currency: "USD",
         symbol: "$",
     },
-    cart: [],
+    cart: getCartFromLocalStorage(),
 };
 
 export const shopSlice = createSlice({
@@ -31,6 +31,7 @@ export const shopSlice = createSlice({
         addProductToCart: (state, action: PayloadAction<Cart>) => {
             if (state.cart.some((product) => product.productID === action.payload.productID)) return;
             state.cart = [...state.cart, action.payload];
+            setCarttoLocalStorage(state.cart);
         },
         incrementCartQuantity: (state, action: PayloadAction<number>) => {
             // console.log(state);
