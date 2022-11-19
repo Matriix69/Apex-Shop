@@ -94,10 +94,20 @@
         bottom: -1.5rem;
         right: 31px;
         display: none;
+        @media (max-width: 800px) {
+            height: 40px;
+            width: 40px;
+            bottom: -1rem;
+        }
 
         svg {
             height: 24px;
             width: 24px;
+
+            @media (max-width: 800px) {
+                height: 19px;
+                width: 19px;
+            }
 
             path {
                 fill: white;

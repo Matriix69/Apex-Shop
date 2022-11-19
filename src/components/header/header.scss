@@ -32,16 +32,27 @@
         @media screen and (max-width: 700px) {
             display: none;
             gap: 10px;
-            position: absolute;
+            position: fixed;
             flex-direction: column;
             background: white;
-            top: 60px;
-            z-index: 99;
-            width: 100%;
+            top: 0;
             min-height: 180px;
             left: 0;
             align-items: flex-start;
             padding: 0 15px;
+            width: 300px;
+            padding: 40px 36px 150px 30px;
+            height: 100vh;
+            z-index: 100;
+
+            & > a {
+                border: none !important;
+                height: auto;
+                padding: 10px 0;
+                line-height: 1.166667;
+                font-weight: 500;
+                font-size: 24px;
+            }
         }
     }
 
@@ -135,4 +146,16 @@
             transform: translateY(-4px) rotate(0deg);
         }
     }
+}
+
+.header_overlay {
+    background-color: hsla(0, 0%, 7%, 0.16);
+    backdrop-filter: blur(1px);
+    display: block;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 99;
 }

@@ -36,6 +36,8 @@ const Header = () => {
                     ))}
                 </nav>
 
+                {menuToggle && <div className="header_overlay" onClick={() => setMenuToggle(false)} />}
+
                 <button
                     className="burger"
                     aria-label="burger - menu button"

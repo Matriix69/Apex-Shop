@@ -29,7 +29,7 @@
                 display: flex;
                 flex-wrap: wrap;
                 grid-template-columns: repeat(3, minmax(0, 80px));
-                gap: 16px;
+                gap: 8px;
             }
 
             button {
@@ -38,6 +38,8 @@
                 max-height: 80px;
                 aspect-ratio: 1/1;
                 position: relative;
+                border-radius: 5px;
+                overflow: hidden;
 
                 img {
                     object-fit: cover;
