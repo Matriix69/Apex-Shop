@@ -62,7 +62,7 @@ import { Cart, Currencies, PathName, products, Routes } from "./types";
 export const mockData: products[] = [
     {
         productID: 1,
-        productName: "Apex Sportswear Premium Essentials",
+        productName: "Shop Happy Sportswear Premium Essentials",
         type: "Men's Sleeve T-Shirt",
         price: 88,
         sizes: ["XL", "S", "M", "L"],
@@ -78,7 +78,7 @@ export const mockData: products[] = [
     },
     {
         productID: 2,
-        productName: "Apex Ankara",
+        productName: "Shop Happy Ankara",
         type: "Men's Short-Sleeve T-Shirt",
         price: 50,
         discountedPrice: 40,
@@ -94,7 +94,7 @@ export const mockData: products[] = [
     },
     {
         productID: 3,
-        productName: "Apex Premium Essentials Long",
+        productName: "Shop Happy Premium Essentials Long",
         type: "Long-sleeve",
         price: 50,
         sizes: ["S", "M", "L"],
@@ -110,7 +110,7 @@ export const mockData: products[] = [
     },
     {
         productID: 4,
-        productName: "Apex short shirt",
+        productName: "Shop Happy short shirt",
         type: "Running shirt",
         price: 60,
         sizes: ["XL", "M", "L"],
@@ -125,7 +125,7 @@ export const mockData: products[] = [
     },
     {
         productID: 5,
-        productName: "Apex Men Sport Shorts",
+        productName: "Shop Happy Men Sport Shorts",
         type: "Running Short",
         price: 59,
         sizes: ["XL", "S", "M", "L"],
@@ -140,7 +140,7 @@ export const mockData: products[] = [
     },
     {
         productID: 6,
-        productName: "Apex Dragon Wear",
+        productName: "Shop Happy Dragon Wear",
         type: "Fight Shorts",
         price: 158,
         discountedPrice: 58,
@@ -157,7 +157,7 @@ export const mockData: products[] = [
     },
     {
         productID: 7,
-        productName: "Apex Dragon Wear Long",
+        productName: "Shop Happy Dragon Wear Long",
         type: "Fight Shorts Long",
         price: 67,
         discountedPrice: 38,
@@ -172,7 +172,7 @@ export const mockData: products[] = [
     },
     {
         productID: 8,
-        productName: "Apex Cut",
+        productName: "Shop Happy Cut",
         type: "Cut Shorts",
         price: 50,
         sizes: ["XL", "S", "M", "L"],
@@ -186,7 +186,7 @@ export const mockData: products[] = [
     },
     {
         productID: 9,
-        productName: "Apex Drop-Di",
+        productName: "Shop Happy Drop-Di",
         type: "Women graphic tank",
         price: 50,
         sizes: ["XL", "S", "M", "L"],
@@ -200,7 +200,7 @@ export const mockData: products[] = [
     },
     // {
     //     productID: 33,
-    //     productName: "Apex Drop-Di",
+    //     productName: "Shop Happy Drop-Di",
     //     type: "Women graphic tank",
     //     price: 230,
     //     sizes: ["XL", "S", "M", "L"],
@@ -214,7 +214,7 @@ export const mockData: products[] = [
     // },
     {
         productID: 10,
-        productName: "Apex Drop-Di Elment",
+        productName: "Shop Happy Drop-Di Elment",
         type: "Women Star-Wars tank",
         price: 150,
         sizes: ["XL", "S", "M", "L"],
@@ -229,7 +229,7 @@ export const mockData: products[] = [
     },
     {
         productID: 11,
-        productName: "Apex Toga Elment",
+        productName: "Shop Happy Toga Elment",
         type: "Women infinalon crop",
         price: 150,
         sizes: ["XL", "S", "M", "L"],
@@ -245,7 +245,7 @@ export const mockData: products[] = [
     },
     {
         productID: 12,
-        productName: "Apex Aero-Shift Adv",
+        productName: "Shop Happy Aero-Shift Adv",
         type: "Women infinalon running crop",
         price: 123,
         sizes: ["XL", "S", "M", "L"],
@@ -259,7 +259,7 @@ export const mockData: products[] = [
     },
     {
         productID: 13,
-        productName: "Apex Alate Solo",
+        productName: "Shop Happy Alate Solo",
         type: "Women Light Support pad",
         price: 23,
         sizes: ["XL", "S", "M", "L"],
@@ -273,7 +273,7 @@ export const mockData: products[] = [
     },
     {
         productID: 14,
-        productName: "Apex ACG",
+        productName: "Shop Happy ACG",
         type: "Women Light T-Shirt",
         price: 127,
         discountedPrice: 77,
@@ -292,7 +292,7 @@ export const mockData: products[] = [
     },
     {
         productID: 15,
-        productName: "Apex Sport Wear Fleece",
+        productName: "Shop Happy Sport Wear Fleece",
         type: "Kids Light T-Shirt",
         price: 20,
         sizes: ["S", "M", "L"],
@@ -306,7 +306,7 @@ export const mockData: products[] = [
     },
     {
         productID: 16,
-        productName: "Apex Wall of Tee",
+        productName: "Shop Happy Wall of Tee",
         type: "Kids Big T-Shirt",
         price: 25,
         sizes: ["S", "M", "L"],
@@ -317,7 +317,7 @@ export const mockData: products[] = [
     },
     {
         productID: 17,
-        productName: "Apex Culture of Nawi",
+        productName: "Shop Happy Culture of Nawi",
         type: "Kids 2/3 pull",
         price: 243,
         discountedPrice: 43,
@@ -329,7 +329,7 @@ export const mockData: products[] = [
     },
     {
         productID: 18,
-        productName: "Apex Woo",
+        productName: "Shop Happy Woo",
         type: "Kids 2/3 pull Woo",
         price: 44,
         sizes: ["S", "M", "L"],
@@ -344,7 +344,7 @@ export const mockData: products[] = [
     },
     {
         productID: 19,
-        productName: "Apex Essentials Shine",
+        productName: "Shop Happy Essentials Shine",
         type: "Kids 2/3 pull Shine",
         price: 10,
         sizes: ["S", "M", "L"],
@@ -359,7 +359,7 @@ export const mockData: products[] = [
     },
     {
         productID: 20,
-        productName: "Apex Essentials Glow",
+        productName: "Shop Happy Essentials Glow",
         type: "Kids 2/3 pull Glow",
         price: 35,
         discountedPrice: 15,
@@ -375,7 +375,7 @@ export const mockData: products[] = [
     },
     {
         productID: 21,
-        productName: "Apex Tech Flee",
+        productName: "Shop Happy Tech Flee",
         type: "Kids 2/3 pull Flee",
         price: 17,
         sizes: ["S", "M", "L"],
@@ -390,7 +390,7 @@ export const mockData: products[] = [
     },
     {
         productID: 22,
-        productName: "Apex stadium Away",
+        productName: "Shop Happy stadium Away",
         type: "Kids 2/3 pull stadium",
         price: 199,
         sizes: ["S", "M", "L"],

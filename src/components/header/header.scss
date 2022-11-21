@@ -17,6 +17,12 @@
         height: 60px;
     }
 
+    &_brand {
+        svg {
+            width: 31px;
+            height: auto;
+        }
+    }
     &_nav {
         @include mixins.flex1(row);
         gap: 32px;
