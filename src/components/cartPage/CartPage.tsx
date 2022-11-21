@@ -5,7 +5,7 @@ import SingleCartItem from "./SingleCartItem";
 import { usePaystackPayment } from "react-paystack";
 import { onClose, onSuccess, paystackConfig } from "../../utiles/paystack";
 import DeleteModel from "./DeleteModel";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import useHideScrollBar from "../../hooks/useHideScrollBar";
 
 function CartPage() {
@@ -23,7 +23,7 @@ function CartPage() {
     const [itemToBeDeleted, setItemToBeDeleted] = useState<number>(0);
 
     useHideScrollBar(deleteItem);
-    console.log(itemToBeDeleted);
+
     return (
         <>
             <h1 className="cart_heading">Cart</h1>
