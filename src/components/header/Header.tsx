@@ -20,7 +20,7 @@ const Header = () => {
     return (
         <>
             <header className="header">
-                <nav className="header_nav" style={menuToggle ? { display: "flex" } : {}}>
+                <nav className="header_nav" style={menuToggle ? { display: "flex", transform: "translateX(0)" } : {}}>
                     {routes.map((route) => (
                         <NavLink
                             to={route.path}

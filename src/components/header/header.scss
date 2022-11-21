@@ -30,7 +30,7 @@
         }
 
         @media screen and (max-width: 700px) {
-            display: none;
+            // display: none;
             gap: 10px;
             position: fixed;
             flex-direction: column;
@@ -44,6 +44,8 @@
             padding: 40px 36px 150px 30px;
             height: 100vh;
             z-index: 100;
+            transform: translateX(-310px);
+            transition: all 0.3s ease;
 
             & > a {
                 border: none !important;

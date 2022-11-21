@@ -33,8 +33,16 @@ export const shopSlice = createSlice({
             state.cart = [...state.cart, action.payload];
             setCarttoLocalStorage(state.cart);
         },
+        removeProductFromCart: (state, action: PayloadAction<number>) => {
+            const getCartIndex = state.cart.findIndex((cart) => cart.productID === action.payload);
+            if (isNaN(getCartIndex)) return;
+            const cartItems = state.cart;
+            cartItems.splice(getCartIndex, 1);
+            state.cart = cartItems;
+            setCarttoLocalStorage(cartItems);
+        },
         incrementCartQuantity: (state, action: PayloadAction<number>) => {
-            // console.log(state);
+            console.log(state);
             const getCartIndex = state.cart.findIndex((cart) => cart.productID === action.payload);
             const updateCart: Cart = {
                 ...state.cart[getCartIndex],
@@ -69,8 +77,15 @@ export const shopSlice = createSlice({
     },
 });
 
-export const { changeCurrency, addProductToCart, incrementCartQuantity, decrementCartQuantity, updateCartColor, updateCartSize } =
-    shopSlice.actions;
+export const {
+    changeCurrency,
+    addProductToCart,
+    incrementCartQuantity,
+    decrementCartQuantity,
+    updateCartColor,
+    updateCartSize,
+    removeProductFromCart,
+} = shopSlice.actions;
 
 export const selectAllProducts = (state: RootState) => state.shop.mockProducts;
 export const selectCurrency = (state: RootState) => state.shop.currency;

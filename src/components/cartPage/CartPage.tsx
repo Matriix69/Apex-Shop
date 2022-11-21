@@ -4,6 +4,9 @@ import { formatToCurrency, getCartTotoalPrice, getCartTotoalQuantity, getProduct
 import SingleCartItem from "./SingleCartItem";
 import { usePaystackPayment } from "react-paystack";
 import { onClose, onSuccess, paystackConfig } from "../../utiles/paystack";
+import DeleteModel from "./DeleteModel";
+import { useEffect, useState } from "react";
+import useHideScrollBar from "../../hooks/useHideScrollBar";
 
 function CartPage() {
     const cart = useAppSelector((state) => state.shop.cart);
@@ -16,13 +19,23 @@ function CartPage() {
 
     const initializePayment = usePaystackPayment(paystackConfig(getCartToatal));
 
+    const [deleteItem, setDelete] = useState(false);
+    const [itemToBeDeleted, setItemToBeDeleted] = useState<number>(0);
+
+    useHideScrollBar(deleteItem);
+    console.log(itemToBeDeleted);
     return (
         <>
             <h1 className="cart_heading">Cart</h1>
             {cart.length ? (
                 <>
                     {getCartProducts.map((product) => (
-                        <SingleCartItem key={product.productID} product={product} />
+                        <SingleCartItem
+                            key={product.productID}
+                            product={product}
+                            setDelete={setDelete}
+                            setItemToBeDeleted={setItemToBeDeleted}
+                        />
                     ))}
 
                     <div className="pricing">
@@ -47,6 +60,7 @@ function CartPage() {
                             Order
                         </button>
                     </div>
+                    {deleteItem && <DeleteModel setDelete={setDelete} itemToBeDeleted={itemToBeDeleted} />}
                 </>
             ) : (
                 <p>You have no item in cart, Add some product to cart and they will show up here</p>

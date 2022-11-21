@@ -53,7 +53,7 @@ const ProductPage = () => {
             <div className="p_images">
                 <div className="p_images_preview">
                     {imagePreviews.map((imagePreview, i) => (
-                        <button key={i} onClick={() => setPreview(imagePreview)}>
+                        <button key={i} onClick={() => setPreview(imagePreview)} onMouseEnter={() => setPreview(imagePreview)}>
                             <img src={imagePreview} />
                         </button>
                     ))}

@@ -3,6 +3,7 @@ import { ReactComponent as Plus } from "../../assets/plus.svg";
 import { ReactComponent as Minus } from "../../assets/minus.svg";
 import { ReactComponent as Right } from "../../assets/right.svg";
 import { ReactComponent as Left } from "../../assets/left.svg";
+import { ReactComponent as Delete } from "../../assets/delete.svg";
 import { products } from "../../utiles/types";
 import { useAppDispatch, useAppSelector } from "../../app/hook";
 import { formatToCurrency } from "../../utiles/utiles";
@@ -10,7 +11,15 @@ import { decrementCartQuantity, incrementCartQuantity, updateCartColor, updateCa
 import { Link } from "react-router-dom";
 import { useState } from "react";
 
-const SingleCartItem = ({ product }: { product: products }) => {
+const SingleCartItem = ({
+    product,
+    setDelete,
+    setItemToBeDeleted,
+}: {
+    product: products;
+    setDelete: (value: boolean) => void;
+    setItemToBeDeleted: (value: number) => void;
+}) => {
     const { productName, image, price, type, sizes, colors, productID, imagePreviews } = product;
 
     const cart = useAppSelector((state) => state.shop.cart);
@@ -93,6 +102,18 @@ const SingleCartItem = ({ product }: { product: products }) => {
 
                 <div className="c_image_preview">
                     <img src={imagePreviews[previewIndex]} />
+                    <div className="c_image_remove">
+                        <button
+                            title="previous slide"
+                            aria-label="previous slide"
+                            onClick={() => {
+                                setItemToBeDeleted(productID);
+                                setDelete(true);
+                            }}
+                        >
+                            <Delete />
+                        </button>
+                    </div>
                     <div className="c_image_slide">
                         <button title="previous slide" aria-label="previous slide" onClick={() => setPreviewIndex(prevSlide)}>
                             <Left />
