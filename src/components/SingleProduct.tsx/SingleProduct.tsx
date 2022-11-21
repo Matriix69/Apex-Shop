@@ -56,8 +56,8 @@ const SingleProduct = ({ product }: { product: products }) => {
                     <div className="SingleProduct_name">{productName}</div>
                     <div className="SingleProduct_type">{type}</div>
                     <div className="SingleProduct_price">
-                        {formatToCurrency(currentCurrency.currency, price)}{" "}
-                        {discountedPrice ? <s>{formatToCurrency(currentCurrency.currency, discountedPrice)}</s> : null}
+                        {formatToCurrency(currentCurrency.currency, discountedPrice ? discountedPrice : price)}{" "}
+                        {discountedPrice ? <s>{formatToCurrency(currentCurrency.currency, price)}</s> : null}
                     </div>
                 </Link>
             )}
@@ -72,8 +72,8 @@ const SingleProduct = ({ product }: { product: products }) => {
                         {imagePreviews.length > 3 && imagePreviews.length - 3 ? <span>+{imagePreviews.length - 3}</span> : null}
                     </div>
                     <div className="SingleProduct_price" style={{ marginTop: "10px" }}>
-                        {formatToCurrency(currentCurrency.currency, price)}
-                        {discountedPrice ? <s>{formatToCurrency(currentCurrency.currency, discountedPrice)}</s> : null}
+                        {formatToCurrency(currentCurrency.currency, discountedPrice ? discountedPrice : price)}
+                        {discountedPrice ? <s>{formatToCurrency(currentCurrency.currency, price)}</s> : null}
                     </div>
                 </Link>
             )}
